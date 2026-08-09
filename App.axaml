@@ -1,9 +1,16 @@
-<Application xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="just_fucking_write.App"
-             xmlns:local="using:just_fucking_write"
-             RequestedThemeVariant="Dark">
-             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+<Application
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="just_fucking_write.App"
+    xmlns:local="using:just_fucking_write"
+    RequestedThemeVariant="Light"
+>
+
+    <Application.Resources>
+        <FontFamily x:Key="SourceSerif">
+            avares://just-fucking-write/Assets/Fonts/SourceSerif4#Source Serif 4
+        </FontFamily>
+    </Application.Resources>
 
     <Application.DataTemplates>
         <local:ViewLocator />
@@ -12,4 +19,5 @@
     <Application.Styles>
         <FluentTheme />
     </Application.Styles>
+
 </Application>

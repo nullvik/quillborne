@@ -1,20 +1,43 @@
-<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:just_fucking_write.ViewModels"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="just_fucking_write.Views.MainWindow"
-        x:DataType="vm:MainViewModel"
-        Icon="/Assets/logo.ico"
-        Title="just_fucking_write">
+<Window
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:just_fucking_write.ViewModels"
+    xmlns:v="using:just_fucking_write.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignWidth="800"
+    d:DesignHeight="450"
+    x:Class="just_fucking_write.Views.MainWindow"
+    x:DataType="vm:MainViewModel"
+    Icon="/Assets/logo.ico"
+    Title="Just Fucking Write"
+>
+    <Window.Styles>
+        <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
+            <Setter Property="BorderBrush" Value="Transparent" />
+        </Style>
+    </Window.Styles>
 
     <Design.DataContext>
         <vm:MainViewModel />
     </Design.DataContext>
 
-    <TextBox Text="{Binding Greeting}"
-             HorizontalAlignment="Center"
-             VerticalAlignment="Center" />
-
+    <Grid ColumnDefinitions="1*,2*,1*" Background="#2B2B2B">
+        <ScrollViewer
+            Grid.Column="1"
+            HorizontalScrollBarVisibility="Hidden"
+            VerticalScrollBarVisibility="Auto"
+        >
+            <Border
+                Width="794"
+                Height="1123"
+                Background="#FAFAFA"
+                HorizontalAlignment="Center"
+                Margin="40"
+            >
+                <v:Editor />
+            </Border>
+        </ScrollViewer>
+    </Grid>
 </Window>
