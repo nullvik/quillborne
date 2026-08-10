@@ -1,10 +1,10 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using just_fucking_write.ViewModels;
-using just_fucking_write.Views;
+using quillborne.ViewModels;
+using quillborne.Views;
 
-namespace just_fucking_write;
+namespace quillborne;
 
 public partial class App : Application
 {

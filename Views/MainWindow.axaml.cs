@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace just_fucking_write.Views;
+namespace quillborne.Views;
 
 public partial class MainWindow : Window
 {

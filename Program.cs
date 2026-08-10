@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using System;
 
-namespace just_fucking_write;
+namespace quillborne;
 
 sealed class Program
 {

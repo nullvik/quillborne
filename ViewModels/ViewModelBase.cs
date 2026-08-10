@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace just_fucking_write.ViewModels;
+namespace quillborne.ViewModels;
 
 public abstract class ViewModelBase : ObservableObject
 {

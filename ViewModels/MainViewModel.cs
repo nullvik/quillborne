@@ -1,6 +1,6 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace just_fucking_write.ViewModels;
+namespace quillborne.ViewModels;
 
 public partial class MainViewModel : ViewModelBase
 {
