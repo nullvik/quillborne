@@ -13,6 +13,7 @@
     Icon="/Assets/logo.ico"
     Title="Quillborne"
 >
+
     <Window.Styles>
         <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
             <Setter Property="BorderBrush" Value="Transparent" />
@@ -23,21 +24,9 @@
         <vm:MainViewModel />
     </Design.DataContext>
 
-    <Grid ColumnDefinitions="1*,2*,1*" Background="#2B2B2B">
-        <ScrollViewer
-            Grid.Column="1"
-            HorizontalScrollBarVisibility="Hidden"
-            VerticalScrollBarVisibility="Hidden"
-        >
-            <Border
-                Width="794"
-                Height="1123"
-                Background="#FAFAFA"
-                HorizontalAlignment="Center"
-                Margin="40"
-            >
-                <v:Editor />
-            </Border>
-        </ScrollViewer>
+    <Grid RowDefinitions="Auto, *">
+        <v:NavigationBar Grid.Row="0" />
+        <v:Editor Grid.Row="1" />
     </Grid>
+
 </Window>

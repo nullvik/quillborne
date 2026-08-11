@@ -1,0 +1,37 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:quillborne.ViewModels"
+    x:Class="quillborne.Views.NavigationBar"
+    x:DataType="vm:NavigationBarViewModel"
+>
+
+    <Grid Background="#FF0000">
+        <Border Padding="4">
+            <StackPanel Orientation="Horizontal" Spacing="4">
+                <Button
+                    Content="Settings"
+                    Command="{Binding OpenSettings}"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    MinWidth="64"
+                    MaxWidth="96"
+                />
+
+                <Button
+                    Content="File"
+                    Command="{Binding FileOperations}"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    MinWidth="64"
+                    MaxWidth="96"
+                />
+            </StackPanel>
+        </Border>
+    </Grid>
+
+</UserControl>

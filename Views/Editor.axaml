@@ -6,17 +6,34 @@
     x:DataType="vm:EditorViewModel"
 >
 
-    <TextBox
-        AcceptsReturn="true"
-        TextWrapping="Wrap"
-        AcceptsTab="true"
-        BorderThickness="0"
-        CaretBlinkInterval="0"
-        FontFamily="{StaticResource SourceSerif}"
-        FontSize="18"
-        Padding="75"
-        VerticalContentAlignment="Top"
-        ScrollViewer.VerticalScrollBarVisibility="Hidden"
-    />
+    <Grid ColumnDefinitions="1*,2*,1*" Background="#2B2B2B">
+        <ScrollViewer
+            Grid.Column="1"
+            HorizontalScrollBarVisibility="Hidden"
+            VerticalScrollBarVisibility="Hidden"
+            BringIntoViewOnFocusChange="False"
+        >
+            <Border
+                Width="794"
+                Height="1123"
+                Background="#FAFAFA"
+                HorizontalAlignment="Center"
+                Margin="40"
+            >
+                <TextBox
+                    AcceptsReturn="true"
+                    TextWrapping="Wrap"
+                    AcceptsTab="true"
+                    BorderThickness="0"
+                    CaretBlinkInterval="0"
+                    FontFamily="{StaticResource SourceSerif}"
+                    FontSize="18"
+                    Padding="75"
+                    VerticalContentAlignment="Top"
+                    ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                />
+            </Border>
+        </ScrollViewer>
+    </Grid>
 
 </UserControl>
