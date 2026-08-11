@@ -6,32 +6,47 @@
     x:DataType="vm:NavigationBarViewModel"
 >
 
-    <Grid Background="#FF0000">
-        <Border Padding="4">
-            <StackPanel Orientation="Horizontal" Spacing="4">
-                <Button
-                    Content="Settings"
-                    Command="{Binding OpenSettings}"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    HorizontalContentAlignment="Center"
-                    VerticalContentAlignment="Center"
-                    MinWidth="64"
-                    MaxWidth="96"
-                />
+    <Grid Background="#FAFAFA">
+        <Menu FontSize="16">
+            <MenuItem Header="File">
+                <MenuItem Header="New" />
+                <MenuItem Header="Open" />
+                <MenuItem Header="Save" />
+                <MenuItem Header="Export" />
+            </MenuItem>
 
-                <Button
-                    Content="File"
-                    Command="{Binding FileOperations}"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    HorizontalContentAlignment="Center"
-                    VerticalContentAlignment="Center"
-                    MinWidth="64"
-                    MaxWidth="96"
-                />
-            </StackPanel>
-        </Border>
+            <MenuItem Header="Edit">
+                <MenuItem Header="Undo" />
+                <MenuItem Header="Redo" />
+                <MenuItem Header="Cut" />
+                <MenuItem Header="Copy" />
+                <MenuItem Header="Paste" />
+            </MenuItem>
+
+            <MenuItem Header="View">
+                <MenuItem Header="Sidebar" />
+                <MenuItem Header="Outline" />
+                <MenuItem Header="Word Count" />
+            </MenuItem>
+
+            <MenuItem Header="Focus">
+                <MenuItem Header="Focus Mode" />
+                <MenuItem Header="Typewriter Mode" />
+                <MenuItem Header="Fullscreen" />
+            </MenuItem>
+
+            <MenuItem Header="Search">
+                <MenuItem Header="Find" />
+                <MenuItem Header="Replace" />
+            </MenuItem>
+
+            <MenuItem Header="Settings">
+                <MenuItem Header="Appearance" />
+                <MenuItem Header="Editor" />
+                <MenuItem Header="Shortcuts" />
+                <MenuItem Header="About" />
+            </MenuItem>
+        </Menu>
     </Grid>
 
 </UserControl>

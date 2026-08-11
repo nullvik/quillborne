@@ -5,13 +5,4 @@ namespace quillborne.ViewModels;
 
 public partial class NavigationBarViewModel : ViewModelBase
 {
-    [RelayCommand]
-    private void OpenSettings()
-    {
-    }
-
-    [RelayCommand]
-    private void FileOperations()
-    {
-    }
 }
