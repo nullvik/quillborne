@@ -22,11 +22,12 @@
                 Margin="40"
             >
                 <TextBox
+                    Text="{Binding EditorText, Mode=OneWay}"
                     AcceptsReturn="true"
                     TextWrapping="Wrap"
                     AcceptsTab="true"
                     BorderThickness="0"
-                    CaretBlinkInterval="0"
+                    CaretBlinkInterval="1"
                     FontFamily="{StaticResource SourceSerif}"
                     FontSize="18"
                     Padding="75"

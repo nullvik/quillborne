@@ -26,7 +26,10 @@
 
     <Grid RowDefinitions="Auto, *">
         <v:NavigationBar Grid.Row="0" />
-        <v:Editor Grid.Row="1" />
+        <v:Editor
+            Grid.Row="1"
+            DataContext="{Binding Editor}"
+        />
     </Grid>
 
 </Window>

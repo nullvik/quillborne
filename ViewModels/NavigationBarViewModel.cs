@@ -3,7 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace quillborne.ViewModels;
 
-public partial class NavigationBarViewModel : ViewModelBase
+public partial class NavigationBarViewModel(EditorViewModel editor) : ViewModelBase
 {
     // File Commands
     [RelayCommand]
@@ -21,7 +21,7 @@ public partial class NavigationBarViewModel : ViewModelBase
     [RelayCommand]
     private void SaveFile()
     {
-
+        editor.EditorText = string.Empty;
     }
 
     [RelayCommand]
