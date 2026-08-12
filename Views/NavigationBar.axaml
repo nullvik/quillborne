@@ -9,42 +9,34 @@
     <Grid Background="#FAFAFA">
         <Menu FontSize="16">
             <MenuItem Header="File">
-                <MenuItem Header="New" />
-                <MenuItem Header="Open" />
-                <MenuItem Header="Save" />
-                <MenuItem Header="Export" />
+                <MenuItem Header="New" Command="{Binding NewFile}" />
+                <MenuItem Header="Open" Command="{Binding OpenFile}" />
+                <MenuItem Header="Save" Command="{Binding SaveFile}" />
+                <MenuItem Header="Export" Command="{Binding ExportFile}" />
             </MenuItem>
 
             <MenuItem Header="Edit">
-                <MenuItem Header="Undo" />
-                <MenuItem Header="Redo" />
-                <MenuItem Header="Cut" />
-                <MenuItem Header="Copy" />
-                <MenuItem Header="Paste" />
+                <MenuItem Header="Undo" Command="{Binding UndoEdit}" />
+                <MenuItem Header="Redo" Command="{Binding RedoEdit}" />
+                <MenuItem Header="Cut" Command="{Binding CutEdit}" />
+                <MenuItem Header="Copy" Command="{Binding CopyEdit}" />
+                <MenuItem Header="Paste" Command="{Binding PasteEdit}" />
             </MenuItem>
 
             <MenuItem Header="View">
-                <MenuItem Header="Sidebar" />
-                <MenuItem Header="Outline" />
-                <MenuItem Header="Word Count" />
-            </MenuItem>
-
-            <MenuItem Header="Focus">
-                <MenuItem Header="Focus Mode" />
-                <MenuItem Header="Typewriter Mode" />
-                <MenuItem Header="Fullscreen" />
+                <MenuItem Header="Sidebar" Command="{Binding SidebarView}" />
+                <MenuItem Header="Outline" Command="{Binding OutlineView}" />
+                <MenuItem Header="Word Count" Command="{Binding WordCountView}" />
             </MenuItem>
 
             <MenuItem Header="Search">
-                <MenuItem Header="Find" />
-                <MenuItem Header="Replace" />
+                <MenuItem Header="Find" Command="{Binding FindSearch}" />
+                <MenuItem Header="Replace" Command="{Binding ReplaceSearch}" />
             </MenuItem>
 
-            <MenuItem Header="Settings">
-                <MenuItem Header="Appearance" />
-                <MenuItem Header="Editor" />
-                <MenuItem Header="Shortcuts" />
-                <MenuItem Header="About" />
+            <MenuItem Header="Options">
+                <MenuItem Header="Settings" Command="{Binding SettingsOptions}" />
+                <MenuItem Header="About" Command="{Binding AboutOptions}" />
             </MenuItem>
         </Menu>
     </Grid>
