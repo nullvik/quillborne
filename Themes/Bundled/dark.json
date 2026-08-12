@@ -1,0 +1,29 @@
+{
+  "id": "dark",
+  "name": "Dark",
+  "author": "MyApp",
+  "version": "1.0.0",
+
+  "colors": {
+    "background": "#111113",
+    "surface": "#18181B",
+    "surfaceAlt": "#202024",
+
+    "textPrimary": "#F4F4F5",
+    "textSecondary": "#A1A1AA",
+    "textMuted": "#71717A",
+
+    "border": "#27272A",
+    "borderStrong": "#3F3F46",
+
+    "highlight": "#F2004B",
+    "highlightHover": "#FF336F",
+    "highlightSoft": "#3A111F",
+    "selection": "#63233A",
+    "cursor": "#FF336F",
+
+    "success": "#4ADE80",
+    "warning": "#FBBF24",
+    "error": "#FB7185"
+  }
+}

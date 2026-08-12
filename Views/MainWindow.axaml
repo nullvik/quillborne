@@ -12,6 +12,7 @@
     x:DataType="vm:MainViewModel"
     Icon="/Assets/logo.ico"
     Title="Quillborne"
+    Background="{DynamicResource BackgroundBrush}"
 >
 
     <Window.Styles>
@@ -24,12 +25,15 @@
         <vm:MainViewModel />
     </Design.DataContext>
 
-    <Grid RowDefinitions="Auto, *">
-        <v:NavigationBar Grid.Row="0" />
-        <v:Editor
-            Grid.Row="1"
-            DataContext="{Binding Editor}"
-        />
+    <Grid
+        RowDefinitions="Auto,*"
+        Background="{DynamicResource BackgroundBrush}"
+    >
+
+        <v:NavigationBar Grid.Row="0" DataContext="{Binding NavigationBar}" />
+
+        <v:Editor Grid.Row="1" DataContext="{Binding Editor}" />
+
     </Grid>
 
 </Window>

@@ -1,9 +1,10 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using quillborne.Services;
 
 namespace quillborne.ViewModels;
 
-public partial class NavigationBarViewModel(EditorViewModel editor) : ViewModelBase
+public partial class NavigationBarViewModel(EditorViewModel editor, IWindowService windowService) : ViewModelBase
 {
     // File Commands
     [RelayCommand]
@@ -97,7 +98,7 @@ public partial class NavigationBarViewModel(EditorViewModel editor) : ViewModelB
     [RelayCommand]
     private void SettingsOptions()
     {
-
+        windowService.ShowSettings();
     }
 
     [RelayCommand]

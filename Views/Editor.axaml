@@ -6,34 +6,43 @@
     x:DataType="vm:EditorViewModel"
 >
 
-    <Grid ColumnDefinitions="1*,2*,1*" Background="#FAFAFA">
+    <Grid
+        ColumnDefinitions="1*,2*,1*"
+        Background="{DynamicResource SurfaceAltBrush}"
+    >
+
         <ScrollViewer
             Grid.Column="1"
             HorizontalScrollBarVisibility="Hidden"
             VerticalScrollBarVisibility="Hidden"
             BringIntoViewOnFocusChange="False"
         >
+
             <Border
                 Width="794"
                 Height="1123"
-                Background="#FAFAFA"
+                Background="{DynamicResource BackgroundBrush}"
                 HorizontalAlignment="Center"
                 BoxShadow="0 4 12 0 #30000000"
                 Margin="40"
             >
+
                 <TextBox
                     Text="{Binding EditorText, Mode=OneWay}"
-                    AcceptsReturn="true"
+                    AcceptsReturn="True"
                     TextWrapping="Wrap"
-                    AcceptsTab="true"
+                    AcceptsTab="True"
                     BorderThickness="0"
                     CaretBlinkInterval="1"
+                    CaretBrush="{DynamicResource CursorBrush}"
                     FontFamily="{StaticResource SourceSerif}"
                     FontSize="18"
+                    Foreground="{DynamicResource TextPrimaryBrush}"
                     Padding="75"
                     VerticalContentAlignment="Top"
                     ScrollViewer.VerticalScrollBarVisibility="Hidden"
                 />
+
             </Border>
         </ScrollViewer>
     </Grid>

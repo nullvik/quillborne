@@ -1,0 +1,41 @@
+<Window
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:quillborne.ViewModels"
+    x:Class="quillborne.Views.SettingsWindow"
+    x:DataType="vm:SettingsViewModel"
+    Title="Settings"
+    Width="500"
+    Height="400"
+    Background="{DynamicResource BackgroundBrush}">
+
+    <StackPanel
+        Margin="24"
+        Spacing="16">
+
+        <TextBlock
+            Text="Settings"
+            FontSize="24"
+            FontWeight="Bold"
+            Foreground="{DynamicResource TextPrimaryBrush}" />
+
+        <TextBlock
+            Text="Theme"
+            Foreground="{DynamicResource TextSecondaryBrush}" />
+
+        <ComboBox
+            ItemsSource="{Binding Themes}"
+            SelectedItem="{Binding SelectedTheme, Mode=TwoWay}"
+            DisplayMemberBinding="{Binding Name}"
+            HorizontalAlignment="Stretch" />
+
+        <Button
+            Content="Apply"
+            Command="{Binding ApplyThemeCommand}"
+            HorizontalAlignment="Left"
+            Background="{DynamicResource HighlightBrush}"
+            Foreground="{DynamicResource SurfaceBrush}" />
+
+    </StackPanel>
+
+</Window>
