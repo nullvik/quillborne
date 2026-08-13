@@ -7,6 +7,8 @@ using Avalonia;
 using Avalonia.Media;
 using quillborne.Themes.Models;
 
+using System.Diagnostics;
+
 namespace quillborne.Themes.Services;
 
 public sealed class ThemeService : IThemeService
@@ -26,6 +28,11 @@ public sealed class ThemeService : IThemeService
     {
         _themes.Clear();
 
+        var options = new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true
+        };
+
         foreach (var file in Directory.EnumerateFiles(
             ThemePaths.Directory,
             "*.json"))
@@ -35,7 +42,7 @@ public sealed class ThemeService : IThemeService
                 var json = File.ReadAllText(file);
 
                 var theme =
-                    JsonSerializer.Deserialize<ThemeDefinition>(json);
+                    JsonSerializer.Deserialize<ThemeDefinition>(json, options);
 
                 if (theme is not null)
                     _themes.Add(theme);
