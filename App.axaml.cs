@@ -5,6 +5,9 @@ using Avalonia.Markup.Xaml;
 using Microsoft.Extensions.DependencyInjection;
 using quillborne.Services;
 using quillborne.Services.Themes.Services;
+using quillborne.Services.Settings;
+using quillborne.Services.Projects;
+using quillborne.Services.Files;
 using quillborne.ViewModels;
 using quillborne.Views;
 
@@ -25,6 +28,11 @@ public partial class App : Application
 
     private static void ConfigureServices(IServiceCollection services)
     {
+        // Projects, Settings, Files
+        services.AddSingleton<IProjectService, ProjectService>();
+        services.AddSingleton<ISettingsService, SettingsService>();
+        services.AddSingleton<IFileService, FileService>();
+
         // Themes
         services.AddSingleton<IThemeInstaller, ThemeInstaller>();
         services.AddSingleton<IThemeService, ThemeService>();
@@ -46,21 +54,18 @@ public partial class App : Application
 
     public override void OnFrameworkInitializationCompleted()
     {
-        if (ApplicationLifetime
-            is IClassicDesktopStyleApplicationLifetime desktop)
+        if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            var installer =
-                Services.GetRequiredService<IThemeInstaller>();
+            var settingsLoader = Services.GetRequiredService<ISettingsService>();
+            AppSettings settings = settingsLoader.Load();
 
-            installer.InstallBundledThemes();
+            var themeInstaller = Services.GetRequiredService<IThemeInstaller>();
+            themeInstaller.InstallBundledThemes();
 
-            var themeService =
-                Services.GetRequiredService<IThemeService>();
-
+            var themeService = Services.GetRequiredService<IThemeService>();
             themeService.LoadThemes();
 
-            var mainViewModel =
-                Services.GetRequiredService<MainViewModel>();
+            var mainViewModel = Services.GetRequiredService<MainViewModel>();
 
             desktop.MainWindow = new MainWindow
             {

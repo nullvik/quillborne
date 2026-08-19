@@ -10,8 +10,7 @@ public sealed class WindowService(
 {
     public void ShowSettingsWindow()
     {
-        var viewModel =
-            services.GetRequiredService<SettingsViewModel>();
+        var viewModel = services.GetRequiredService<SettingsViewModel>();
 
         var window = new SettingsWindow
         {
