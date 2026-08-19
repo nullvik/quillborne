@@ -1,6 +1,6 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace quillborne.ViewModels;
+namespace quillborne.ViewModels.Editor;
 
 public partial class EditorViewModel : ViewModelBase
 {

@@ -1,0 +1,63 @@
+<Window
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:quillborne.ViewModels.Windows"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    x:Class="quillborne.Views.Windows.SettingsWindow"
+    x:DataType="vm:SettingsViewModel"
+    d:DesignWidth="800"
+    d:DesignHeight="450"
+    Icon="/Assets/logo_settings.ico"
+    Title="Settings"
+    Background="{DynamicResource BackgroundBrush}">
+
+    <StackPanel
+        Margin="24"
+        Spacing="16">
+
+        <TextBlock
+            Text="Settings"
+            FontSize="24"
+            FontWeight="Bold"
+            Foreground="{DynamicResource TextPrimaryBrush}" />
+
+        <TextBlock
+            Text="Theme"
+            Foreground="{DynamicResource TextSecondaryBrush}" />
+
+        <ComboBox
+            ItemsSource="{Binding Themes}"
+            SelectedItem="{Binding SelectedTheme, Mode=TwoWay}"
+            DisplayMemberBinding="{Binding Name}"
+            HorizontalAlignment="Stretch"
+            Background="{DynamicResource BackgroundBrush}"
+            Foreground="{DynamicResource TextPrimaryBrush}">
+
+            <ComboBox.Styles>
+                <Style Selector="ComboBoxItem">
+                    <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
+                    <Setter Property="Foreground" Value="{DynamicResource TextPrimaryBrush}" />
+                </Style>
+
+                <Style Selector="ComboBoxItem:pointerover">
+                    <Setter Property="Background" Value="{DynamicResource BackgroundHoverBrush}" />
+                    <Setter Property="Foreground" Value="{DynamicResource TextPrimaryBrush}" />
+                </Style>
+
+                <Style Selector="ComboBoxItem:selected">
+                    <Setter Property="Background" Value="{DynamicResource AccentBrush}" />
+                    <Setter Property="Foreground" Value="{DynamicResource TextPrimaryBrush}" />
+                </Style>
+            </ComboBox.Styles>
+        </ComboBox>
+
+        <Button
+            Content="Apply"
+            Command="{Binding ApplyThemeCommand}"
+            HorizontalAlignment="Left"
+            Background="{DynamicResource HighlightBrush}"
+            Foreground="{DynamicResource SurfaceBrush}" />
+
+    </StackPanel>
+
+</Window>

@@ -75,7 +75,7 @@ public sealed class ThemeService : IThemeService
         CurrentTheme = theme;
 
         ApplyResources(theme);
-        _settingsService.Current.ThemeId = CurrentTheme.Id;
+        _settingsService.Current.ThemeId = theme.Id;
         _settingsService.Save();
     }
 

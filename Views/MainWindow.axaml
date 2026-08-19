@@ -3,6 +3,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:vm="using:quillborne.ViewModels"
     xmlns:v="using:quillborne.Views"
+    xmlns:navbar="using:quillborne.Views.Navbar"
+    xmlns:editor="using:quillborne.Views.Editor"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -30,9 +32,9 @@
         Background="{DynamicResource BackgroundBrush}"
     >
 
-        <v:NavigationBar Grid.Row="0" DataContext="{Binding NavigationBar}" />
+        <navbar:Navbar Grid.Row="0" DataContext="{Binding Navbar}" />
 
-        <v:Editor Grid.Row="1" DataContext="{Binding Editor}" />
+        <editor:Editor Grid.Row="1" DataContext="{Binding Editor}" />
 
     </Grid>
 

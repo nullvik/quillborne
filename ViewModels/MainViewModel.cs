@@ -1,10 +1,11 @@
 using CommunityToolkit.Mvvm.ComponentModel;
+using quillborne.ViewModels.Editor;
+using quillborne.ViewModels.Navbar;
 
 namespace quillborne.ViewModels;
 
-public partial class MainViewModel(EditorViewModel editor, NavigationBarViewModel navigationBar) : ViewModelBase
+public partial class MainViewModel(EditorViewModel editor, NavbarViewModel navbar) : ViewModelBase
 {
     public EditorViewModel Editor { get; } = editor;
-
-    public NavigationBarViewModel NavigationBar { get; } = navigationBar;
+    public NavbarViewModel Navbar { get; } = navbar;
 }

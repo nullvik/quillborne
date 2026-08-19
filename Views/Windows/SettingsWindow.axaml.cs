@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace quillborne.Views;
+namespace quillborne.Views.Windows;
 
 public partial class SettingsWindow : Window
 {

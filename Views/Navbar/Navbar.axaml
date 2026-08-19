@@ -1,0 +1,80 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:quillborne.ViewModels.Navbar"
+    x:Class="quillborne.Views.Navbar.Navbar"
+    x:DataType="vm:NavbarViewModel"
+    x:CompileBindings="False"
+>
+
+    <Grid Background="{DynamicResource SurfaceBrush}">
+
+        <Menu
+            FontSize="16"
+            Background="{DynamicResource SurfaceBrush}"
+            Foreground="{DynamicResource TextPrimaryBrush}"
+            BorderThickness="0">
+
+            <Menu.Styles>
+                <!-- All MenuItems: no border -->
+                <Style Selector="MenuItem">
+                    <Setter Property="Background" Value="{DynamicResource SurfaceBrush}" />
+                    <Setter Property="Foreground" Value="{DynamicResource TextPrimaryBrush}" />
+                    <Setter Property="BorderThickness" Value="0" />
+                </Style>
+
+                <Style Selector="MenuItem:pointerover">
+                    <Setter Property="Background" Value="{DynamicResource HighlightHoverBrush}" />
+                    <Setter Property="Foreground" Value="{DynamicResource TextPrimaryBrush}" />
+                    <Setter Property="BorderThickness" Value="0" />
+                </Style>
+
+                <Style Selector="MenuItem:selected">
+                    <Setter Property="Background" Value="{DynamicResource HighlightBrush}" />
+                    <Setter Property="Foreground" Value="{DynamicResource TextPrimaryBrush}" />
+                    <Setter Property="BorderThickness" Value="0" />
+                </Style>
+
+                <Style Selector="MenuItem:disabled">
+                    <Setter Property="Background" Value="{DynamicResource SurfaceBrush}" />
+                    <Setter Property="Foreground" Value="{DynamicResource TextMutedBrush}" />
+                    <Setter Property="BorderThickness" Value="0" />
+                </Style>
+            </Menu.Styles>
+
+            <MenuItem Header="File">
+                <MenuItem Header="New" Command="{Binding NewFileCommand}" />
+                <MenuItem Header="Open" Command="{Binding OpenFileCommand}" />
+                <MenuItem Header="Save" Command="{Binding SaveFileCommand}" />
+                <MenuItem Header="Export" Command="{Binding ExportFileCommand}" />
+            </MenuItem>
+
+            <MenuItem Header="Edit">
+                <MenuItem Header="Undo" Command="{Binding UndoEditCommand}" />
+                <MenuItem Header="Redo" Command="{Binding RedoEditCommand}" />
+                <MenuItem Header="Cut" Command="{Binding CutEditCommand}" />
+                <MenuItem Header="Copy" Command="{Binding CopyEditCommand}" />
+                <MenuItem Header="Paste" Command="{Binding PasteEditCommand}" />
+            </MenuItem>
+
+            <MenuItem Header="View">
+                <MenuItem Header="Sidebar" Command="{Binding SidebarViewCommand}" />
+                <MenuItem Header="Outline" Command="{Binding OutlineViewCommand}" />
+                <MenuItem Header="Word Count" Command="{Binding WordCountViewCommand}" />
+            </MenuItem>
+
+            <MenuItem Header="Search">
+                <MenuItem Header="Find" Command="{Binding FindSearchCommand}" />
+                <MenuItem Header="Replace" Command="{Binding ReplaceSearchCommand}" />
+            </MenuItem>
+
+            <MenuItem Header="Options">
+                <MenuItem Header="Settings" Command="{Binding SettingsOptionsCommand}" />
+                <MenuItem Header="About" Command="{Binding AboutOptionsCommand}" />
+            </MenuItem>
+
+        </Menu>
+
+    </Grid>
+
+</UserControl>

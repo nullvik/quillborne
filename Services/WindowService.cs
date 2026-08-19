@@ -1,7 +1,7 @@
 using System;
 using Microsoft.Extensions.DependencyInjection;
-using quillborne.ViewModels;
-using quillborne.Views;
+using quillborne.ViewModels.Windows;
+using quillborne.Views.Windows;
 
 namespace quillborne.Services;
 

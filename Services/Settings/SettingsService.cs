@@ -14,11 +14,6 @@ public sealed class AppSettings
 
 public sealed class SettingsService : ISettingsService
 {
-    private static readonly string SettingsPath = Path.Combine(
-        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
-        "quillborne",
-        "settings.json");
-
     public AppSettings Current { get; }
 
     public SettingsService()
@@ -46,4 +41,9 @@ public sealed class SettingsService : ISettingsService
 
         File.WriteAllText(SettingsPath, json);
     }
+
+    private static readonly string SettingsPath = Path.Combine(
+        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+        "quillborne",
+        "settings.json");
 }

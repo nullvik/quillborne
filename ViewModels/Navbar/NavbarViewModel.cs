@@ -1,11 +1,12 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using quillborne.Services;
+using quillborne.ViewModels.Editor;
 using System;
 
-namespace quillborne.ViewModels;
+namespace quillborne.ViewModels.Navbar;
 
-public partial class NavigationBarViewModel(EditorViewModel editor, IWindowService windowService) : ViewModelBase
+public partial class NavbarViewModel(EditorViewModel editor, IWindowService windowService) : ViewModelBase
 {
     // File Commands
     [RelayCommand]
@@ -23,6 +24,7 @@ public partial class NavigationBarViewModel(EditorViewModel editor, IWindowServi
     [RelayCommand]
     private void SaveFile()
     {
+        // Get project context from project service
         Console.WriteLine(editor.EditorText);
     }
 

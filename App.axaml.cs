@@ -9,6 +9,9 @@ using quillborne.Services.Settings;
 using quillborne.Services.Projects;
 using quillborne.Services.Files;
 using quillborne.ViewModels;
+using quillborne.ViewModels.Windows;
+using quillborne.ViewModels.Editor;
+using quillborne.ViewModels.Navbar;
 using quillborne.Views;
 
 namespace quillborne;
@@ -42,7 +45,7 @@ public partial class App : Application
 
         // ViewModels
         services.AddSingleton<EditorViewModel>();
-        services.AddTransient<NavigationBarViewModel>();
+        services.AddTransient<NavbarViewModel>();
         services.AddTransient<SettingsViewModel>();
         services.AddTransient<MainViewModel>();
     }

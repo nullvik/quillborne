@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace quillborne.Views;
+namespace quillborne.Views.Editor;
 
 public partial class Editor : UserControl
 {
