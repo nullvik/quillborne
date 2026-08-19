@@ -2,8 +2,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using quillborne.Themes.Models;
-using quillborne.Themes.Services;
+using quillborne.Services.Themes.Models;
+using quillborne.Services.Themes.Services;
 
 namespace quillborne.ViewModels;
 

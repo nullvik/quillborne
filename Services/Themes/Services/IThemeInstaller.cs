@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace quillborne.Themes.Services;
+namespace quillborne.Services.Themes.Services;
 
 public interface IThemeInstaller
 {

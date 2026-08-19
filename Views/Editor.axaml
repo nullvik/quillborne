@@ -28,7 +28,7 @@
             >
 
                 <TextBox
-                    Text="{Binding EditorText, Mode=OneWay}"
+                    Text="{Binding EditorText, Mode=OneWayToSource}"
                     AcceptsReturn="True"
                     TextWrapping="Wrap"
                     AcceptsTab="True"

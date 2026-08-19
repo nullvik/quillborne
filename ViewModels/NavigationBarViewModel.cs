@@ -1,6 +1,7 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using quillborne.Services;
+using System;
 
 namespace quillborne.ViewModels;
 
@@ -10,25 +11,25 @@ public partial class NavigationBarViewModel(EditorViewModel editor, IWindowServi
     [RelayCommand]
     private void NewFile()
     {
-
+        // Create new file in project destination
     }
 
     [RelayCommand]
     private void OpenFile()
     {
-
+        // Spawn File Dialogue
     }
 
     [RelayCommand]
     private void SaveFile()
     {
-        editor.EditorText = string.Empty;
+        Console.WriteLine(editor.EditorText);
     }
 
     [RelayCommand]
     private void ExportFile()
     {
-
+        // Conversion to a couple of file formats
     }
 
     // Edit Commands
@@ -98,7 +99,7 @@ public partial class NavigationBarViewModel(EditorViewModel editor, IWindowServi
     [RelayCommand]
     private void SettingsOptions()
     {
-        windowService.ShowSettings();
+        windowService.ShowSettingsWindow();
     }
 
     [RelayCommand]

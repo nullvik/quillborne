@@ -1,4 +1,4 @@
-namespace quillborne.Themes.Models;
+namespace quillborne.Services.Themes.Models;
 
 public sealed class ThemeColors
 {

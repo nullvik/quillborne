@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text.Json;
 using Avalonia;
 using Avalonia.Media;
-using quillborne.Themes.Models;
+using quillborne.Services.Themes.Models;
 
 using System.Diagnostics;
 
-namespace quillborne.Themes.Services;
+namespace quillborne.Services.Themes.Services;
 
 public sealed class ThemeService : IThemeService
 {
@@ -47,9 +47,10 @@ public sealed class ThemeService : IThemeService
                 if (theme is not null)
                     _themes.Add(theme);
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-                // TODO: Log invalid theme
+                Debug.WriteLine($"Failed to load theme: {file}");
+                Debug.WriteLine(exception);
             }
         }
     }

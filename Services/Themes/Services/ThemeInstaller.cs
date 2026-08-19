@@ -3,7 +3,7 @@ using System.IO;
 using System.Threading.Tasks;
 using Avalonia.Platform;
 
-namespace quillborne.Themes.Services;
+namespace quillborne.Services.Themes.Services;
 
 public sealed class ThemeInstaller : IThemeInstaller
 {
@@ -36,7 +36,7 @@ public sealed class ThemeInstaller : IThemeInstaller
             return;
 
         var uri = new Uri(
-            $"avares://quillborne/Themes/Bundled/{fileName}");
+            $"avares://quillborne/Services/Themes/Bundled/{fileName}");
 
         using var source = AssetLoader.Open(uri);
         using var destinationStream = File.Create(destination);

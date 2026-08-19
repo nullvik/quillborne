@@ -4,7 +4,7 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using Microsoft.Extensions.DependencyInjection;
 using quillborne.Services;
-using quillborne.Themes.Services;
+using quillborne.Services.Themes.Services;
 using quillborne.ViewModels;
 using quillborne.Views;
 

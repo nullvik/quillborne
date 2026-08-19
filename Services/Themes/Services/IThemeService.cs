@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using quillborne.Themes.Models;
+using quillborne.Services.Themes.Models;
 
-namespace quillborne.Themes.Services;
+namespace quillborne.Services.Themes.Services;
 
 public interface IThemeService
 {

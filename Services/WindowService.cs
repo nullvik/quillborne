@@ -8,7 +8,7 @@ namespace quillborne.Services;
 public sealed class WindowService(
     IServiceProvider services) : IWindowService
 {
-    public void ShowSettings()
+    public void ShowSettingsWindow()
     {
         var viewModel =
             services.GetRequiredService<SettingsViewModel>();
