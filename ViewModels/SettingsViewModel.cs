@@ -4,6 +4,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using quillborne.Services.Themes.Models;
 using quillborne.Services.Themes.Services;
+using quillborne.Services.Settings;
 
 namespace quillborne.ViewModels;
 

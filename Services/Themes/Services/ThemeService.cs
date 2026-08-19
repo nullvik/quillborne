@@ -6,6 +6,7 @@ using System.Text.Json;
 using Avalonia;
 using Avalonia.Media;
 using quillborne.Services.Themes.Models;
+using quillborne.Services.Settings;
 
 using System.Diagnostics;
 
@@ -13,14 +14,18 @@ namespace quillborne.Services.Themes.Services;
 
 public sealed class ThemeService : IThemeService
 {
+    private readonly ISettingsService _settingsService;
+
     private readonly List<ThemeDefinition> _themes = [];
 
     public IReadOnlyList<ThemeDefinition> Themes => _themes;
 
     public ThemeDefinition? CurrentTheme { get; private set; }
 
-    public ThemeService()
+    public ThemeService(ISettingsService settingsService)
     {
+        _settingsService = settingsService;
+
         Directory.CreateDirectory(ThemePaths.Directory);
     }
 
@@ -55,6 +60,8 @@ public sealed class ThemeService : IThemeService
         }
     }
 
+    public void LoadThemeFromSettings() => ApplyTheme(_settingsService.Current.ThemeId);
+
     public void ApplyTheme(string themeId)
     {
         var theme = _themes.FirstOrDefault(
@@ -68,6 +75,8 @@ public sealed class ThemeService : IThemeService
         CurrentTheme = theme;
 
         ApplyResources(theme);
+        _settingsService.Current.ThemeId = CurrentTheme.Id;
+        _settingsService.Save();
     }
 
     private static void ApplyResources(ThemeDefinition theme)

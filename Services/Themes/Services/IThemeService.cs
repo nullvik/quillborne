@@ -10,6 +10,8 @@ public interface IThemeService
 
     ThemeDefinition? CurrentTheme { get; }
 
+    void LoadThemeFromSettings();
+
     void LoadThemes();
 
     void ApplyTheme(string themeId);

@@ -56,17 +56,16 @@ public partial class App : Application
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            var settingsLoader = Services.GetRequiredService<ISettingsService>();
-            AppSettings settings = settingsLoader.Load();
+            var settingsService = Services.GetRequiredService<ISettingsService>();
 
             var themeInstaller = Services.GetRequiredService<IThemeInstaller>();
             themeInstaller.InstallBundledThemes();
 
             var themeService = Services.GetRequiredService<IThemeService>();
             themeService.LoadThemes();
+            themeService.LoadThemeFromSettings();
 
             var mainViewModel = Services.GetRequiredService<MainViewModel>();
-
             desktop.MainWindow = new MainWindow
             {
                 DataContext = mainViewModel
