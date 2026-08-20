@@ -19,4 +19,16 @@ public sealed class WindowService(
 
         window.Show();
     }
+
+    public void ShowProjectsWindow()
+    {
+        var viewModel = services.GetRequiredService<ProjectsViewModel>();
+
+        var window = new ProjectsWindow
+        {
+            DataContext = viewModel
+        };
+
+        window.Show();
+    }
 }

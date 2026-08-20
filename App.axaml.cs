@@ -1,5 +1,6 @@
 using System;
 using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using Microsoft.Extensions.DependencyInjection;
@@ -47,6 +48,7 @@ public partial class App : Application
         services.AddSingleton<EditorViewModel>();
         services.AddTransient<NavbarViewModel>();
         services.AddTransient<SettingsViewModel>();
+        services.AddTransient<ProjectsViewModel>();
         services.AddTransient<MainViewModel>();
     }
 
@@ -71,8 +73,10 @@ public partial class App : Application
             var mainViewModel = Services.GetRequiredService<MainViewModel>();
             desktop.MainWindow = new MainWindow
             {
-                DataContext = mainViewModel
+                DataContext = mainViewModel,
             };
+
+            desktop.ShutdownMode = ShutdownMode.OnMainWindowClose;
         }
 
         base.OnFrameworkInitializationCompleted();

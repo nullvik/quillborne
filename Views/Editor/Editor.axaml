@@ -37,7 +37,6 @@
                     CaretBrush="{DynamicResource CursorBrush}"
                     FontFamily="{StaticResource SourceSerif}"
                     FontSize="18"
-                    Foreground="{DynamicResource TextPrimaryBrush}"
                     Padding="75"
                     VerticalContentAlignment="Top"
                     ScrollViewer.VerticalScrollBarVisibility="Hidden"
